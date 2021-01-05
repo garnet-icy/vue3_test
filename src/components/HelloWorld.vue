@@ -1,34 +1,41 @@
 <template>
-  <div>
-    <h1>{{state.count}}</h1>
-    <button @click="add()">add</button>
-    <Son ref="son"/>
-  </div>
+  <code>{{msg}}</code>
+  <h1>{{state.count}}{{num}}</h1>
+  <button @click="add" ref="nodes">add</button>
 </template>
 
 <script>
-import { reactive, computed } from 'vue'
-import Son from "./son"
+import { reactive, computed, getCurrentInstance, onMounted, ref } from 'vue'
 export default {
   name: 'HelloWorld',
+  props:{
+    msg:{
+      type:String,
+      require:true,
+    }
+  },
   setup(){
     //reactive 生成双向绑定的数据
     const state = reactive({
       count: 81,
-      son:'son',
-      double: computed(() => state.count * 2)
+      double: computed(() => state.count + 1)
     })
+    // let num = 34
+    let num = ref(34)
+    const {ctx} = getCurrentInstance();
     function add() {
-      state.count = Math.sqrt(state.count)
+      ctx.state.count++
+      num.value++
     }
+    onMounted(()=>{
+
+    })
     return {
       state,
+      num,
       add
     }
   },
-  components:{
-    Son,
-  }
 }
 </script>
 <style scoped>
