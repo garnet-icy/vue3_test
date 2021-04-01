@@ -1,5 +1,6 @@
 <template>
 <h1>{{state.msg}}</h1>
+
 </template>
 
 <script>

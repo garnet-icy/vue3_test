@@ -1,21 +1,29 @@
 <template>
   <div class="header">
-    <router-link to="/index">index</router-link>
-    <router-link to="/page">page</router-link>
+    <button @click="toOne">toOne</button>
   </div>
 </template>
 
 <script>
+import { useRouter,useRoute} from "vue-router"
+import test from "../../../views/composition/test.js"
 export default {
   name: '',
   setup() {
+    console.log(test);
+    const route = useRoute
+    const router = useRouter
+    const toOne = function(){
+      router.push({
+        name:'one'
+      })
+    }
+    return {}
   },
 };
+
+
 </script>
 
 <style scoped>
-.header{
-  height: 80px;
-  background: #3399FF;
-}
 </style>
