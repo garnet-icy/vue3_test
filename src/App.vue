@@ -11,13 +11,15 @@ export default {
 </script>
 
 <style>
+*{
+  margin:0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
 }
 html,body{
   background: linear-gradient(217deg, #1ABC9C, rgba(255,0,0,0) 70.71%),

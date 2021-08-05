@@ -6,7 +6,7 @@
 
 <script>
 import { useRouter,useRoute} from "vue-router"
-import test from "../../../views/composition/test.js"
+import test from "@/views/composition/test.js"
 export default {
   name: '',
   setup() {
